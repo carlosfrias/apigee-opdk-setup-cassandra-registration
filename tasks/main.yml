@@ -10,9 +10,10 @@
     var: target_response_file_path
 
 - debug:
-    var: local_apigee_secure_path
+    var: target_response_file_path | basename
 
-- pause:
+- debug:
+    var: local_apigee_secure_path
 
 - name: Copy target response file to control server
   fetch:
