@@ -13,6 +13,6 @@
 
 - name: Setup component with target response file
   shell: "{{ apigee_service }} edge-management-server apigee-registration-setup -f {{ target_response_file_path }}"
-  delegate_to: ms[0]
+  delegate_to: "{{ ms_ip }}"
 
 
