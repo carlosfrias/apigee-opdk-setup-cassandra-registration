@@ -1,13 +1,18 @@
 ---
 # tasks file for apigee-opdk-setup-cassandra-registration
-- name: Fail the role if we have not response file
+- name: Fail the role if we have not target response file
   assert:
     that:
       - target_response_file_path is defined
     msg: "Please provide the target_response_file_path"
 
-- name: Setup component with config file
+- name: Copy target response file to managment server
+  copy:
+    src: "{{ target_response_file_path }}"
+    dest: "{{ target_response_file_path }}"
+
+- name: Setup component with target response file
   shell: "{{ apigee_service }} edge-management-server apigee-registration-setup -f {{ target_response_file_path }}"
-  when: config is defined and config | trim | length > 0
+  delegate_to: ms[0]
 
 
