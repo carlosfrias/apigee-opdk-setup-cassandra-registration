@@ -6,12 +6,13 @@
       - target_response_file_path is defined
     msg: "Please provide the target_response_file_path"
 
-- name: Copy target response file to managment server
+- name: Copy target response file to control server
   fetch:
     src: "{{ target_response_file_path }}"
     dest: "{{ local_apigee_secure_path }}/{{ target_response_file_path | basename }}"
+    flatten: true
 
-- name: Copy target_response file to management server
+- name: Copy target response file control server to management server
   copy:
     src: "{{ local_apigee_secure_path }}/{{ target_response_file_path | basename }}"
     dest: "{{ target_response_file_path }}"
