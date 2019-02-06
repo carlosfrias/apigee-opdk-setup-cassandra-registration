@@ -6,10 +6,18 @@
       - target_response_file_path is defined
     msg: "Please provide the target_response_file_path"
 
+- debug:
+    var: target_response_file_path
+
+- debug:
+    var: local_apigee_secure_path
+
+- pause:
+
 - name: Copy target response file to control server
   fetch:
     src: "{{ target_response_file_path }}"
-    dest: "{{ local_apigee_secure_path }}/{{ target_response_file_path | basename }}"
+    dest: "{{ local_apigee_secure_path }}"
     flatten: true
 
 - name: Copy target response file control server to management server
