@@ -18,7 +18,7 @@
     src: "{{ local_apigee_secure_path }}/{{ target_response_file_path | basename }}"
     dest: "{{ target_response_file_path }}"
     owner: "{{ opdk_user_name }}"
-    group: "{{ opdk_user_group }}"
+    group: "{{ opdk_group_name }}"
   delegate_to: "{{ local_mgmt_ip }}"
 
 - name: Setup component with target response file
