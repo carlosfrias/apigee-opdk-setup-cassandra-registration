@@ -18,7 +18,7 @@
   fetch:
     src: "{{ target_response_file_path }}"
     dest: "{{ local_apigee_secure_path }}"
-    flatten: true
+    flat: true
 
 - name: Copy target response file control server to management server
   copy:
