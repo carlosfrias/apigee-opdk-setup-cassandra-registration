@@ -19,10 +19,10 @@
     dest: "{{ target_response_file_path }}"
     owner: "{{ opdk_user_name }}"
     group: "{{ opdk_group_name }}"
-  delegate_to: "{{ local_mgmt_ip }}"
+#  delegate_to: "{{ local_mgmt_ip }}"
 
 - name: Setup component with target response file
   shell: "{{ apigee_service }} edge-management-server apigee-registration-setup -f {{ target_response_file_path }}"
-  delegate_to: "{{ local_mgmt_ip }}"
+#  delegate_to: "{{ local_mgmt_ip }}"
 
 
