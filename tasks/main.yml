@@ -40,7 +40,7 @@
       group: "{{ opdk_group_name }}"
 
   - name: Setup component with target response file
-    shell: /opt/apigee/apigee-service/bin/apigee-service edge-management-server apigee-registration-setup -f {{ target_response_file_path }}"
+    shell: /opt/apigee/apigee-service/bin/apigee-service edge-management-server apigee-registration-setup -f {{ target_response_file_path }}
 
   when: local_mgmt_ip == private_address
 
