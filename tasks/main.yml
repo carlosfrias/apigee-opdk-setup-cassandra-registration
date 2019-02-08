@@ -24,7 +24,7 @@
     delegate_to: "{{ local_mgmt_ip }}"
 
   - name: Setup component with target response file
-    shell: /opt/apigee/apigee-service/bin/apigee-service edge-management-server apigee-registration-setup -f {{ target_response_file_path }}"
+    shell: /opt/apigee/apigee-service/bin/apigee-service edge-management-server apigee-registration-setup -f {{ target_response_file_path }}
     delegate_to: "{{ local_mgmt_ip }}"
 
   when: local_mgmt_ip != private_address
